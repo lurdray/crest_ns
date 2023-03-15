@@ -1,0 +1,166 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="hero-area-wrap hero-area-bg d-lg-block d-none d-sm-none">
+<div class="container">
+<div class="row ">
+<div class="col-xxl-12 col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
+<div class="hero-text-content">
+<h1 style="text-align:center">Start your  
+<span>Decentralized <img class="shape hero-text-img" src="{% static 'assets/images/hero-text-bg.png' %}" alt=""></span><br>Journey Here. </h1>
+<p style="text-align:center">what .core domain name will you register?</p>
+
+</div>
+</div>
+<div class="subscribe-area pb-100">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12">
+<div class="subscribe-content text-center">
+
+<form action="" class="subscribe-form mt-50 wow animate flipInX" data-wow-delay="200ms" data-wow-duration="1500ms" method="post">
+	{% csrf_token %}
+<input type="text" onkeyup="return forceLower(this);" name="domain_name" placeholder="Search your perfect .core name">
+<button>.core</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="top-buyer-area pb-76" >
+<div class="container"> 
+<div class="row" >
+	<div  class="col-xxl-2 col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">
+	</div>
+<div  class="col-xxl-8 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="title-wrap">
+<div class="row align-items-center" style="margin-top: 20px">
+<div class="col-xxl-9 col-xl-9 col-lg-4 col-md-4 col-sm-12 col-12">
+<div style="display: flex; flex: row;">
+<span style="margin-right: 10px !important; background: black; width: 50px; height: 50px; border-radius: 50px; align-items: center; justify-content: center; display: flex;"><i style="color: #ffae01" class="bi bi-wallet2"></i></span>
+<p style="margin-right: 10px !important;">Wallets <br> <b>100,000</b></p>
+</div>
+</div>
+<div class="col-xxl-3 col-xl-3 col-lg-8 col-md-8 col-sm-12 col-12">
+<div style="display: flex; flex: row;">
+	<div style="margin-right: 10px !important; background: black; width: 50px; height: 50px; border-radius: 50px; align-items: center; justify-content: center; display: flex;"><i style="color: #ffae01" class="bi bi-person-circle"></i></div>
+
+<p style="margin-right: 10px !important;">Registrations <br> <b>158,000</b></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+<img class="shape hs-1" src="{% static 'assets/images/hero-shape-1.png' %}" alt="">
+<img class="shape hs-2" src="{% static 'assets/images/hero-shape-2.png' %}" alt="">
+<img class="shape hs-3" src="{% static 'assets/images/hero-shape-3.png' %}" alt="">
+<img class="shape hs-4" src="{% static 'assets/images/hero-shape-4.png' %}" alt="">
+</div>
+
+
+
+
+<div class="hero-area-wrap hero-area-bg d-lg-none d-block d-sm-block">
+<div class="container">
+<div class="row ">
+<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+<div class="hero-image-wrap text-center">
+
+</div>
+</div>
+<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 both-small-50">
+<div class="hero-text-content">
+<h1 style="text-align:center">Start your  
+<span>Decentralized <img class="shape hero-text-img" src="{% static 'assets/images/hero-text-bg.png' %}" alt=""></span><br>Journey Here. </h1>
+<p style="text-align:center">what .core domain name will you register?</p>
+<div class="hero-btn-wrap mt-50">
+<div class="subscribe-content text-center">
+
+<form action="" class="subscribe-form mt-50 wow animate flipInX" data-wow-delay="200ms" data-wow-duration="1500ms" method="post">
+	{% csrf_token %}
+<input type="text" onkeyup="return forceLower(this);" name="domain_name" placeholder="Search your perfect .core name">
+<button>.core</button>
+</form>
+</div>
+<div  class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-50">
+<div class="title-wrap">
+<div class="row align-items-center" style="margin-top: 20px">
+<div class="col-xxl-9 col-xl-9 col-lg-4 col-md-6 col-sm-6 col-6">
+<div style="display: flex; flex: row;">
+<span style="margin-right: 10px !important; background: black; width: 30px; height: 30px; border-radius: 30px; align-items: center; justify-content: center; display: flex;"><i style="color: #ffae01" class="bi bi-wallet2"></i></span>
+<p style="margin-right: 10px !important;">Wallets <br> <b>100,000</b></p>
+</div>
+</div>
+<div class="col-xxl-3 col-xl-3 col-lg-8 col-md-6 col-sm-6 col-6">
+<div style="display: flex; flex: row;">
+	<div style="margin-right: 10px !important; background: black; width: 30px; height: 30px; border-radius: 30px; align-items: center; justify-content: center; display: flex;"><i style="color: #ffae01" class="bi bi-person-circle"></i></div>
+
+<p style="margin-right: 10px !important;">Registrations <br> <b>158,000</b></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<img class="shape hs-1" src="{% static 'assets/images/hero-shape-1.png' %}" alt="">
+<img class="shape hs-2" src="{% static 'assets/images/hero-shape-2.png' %}" alt="">
+<img class="shape hs-3" src="{% static 'assets/images/hero-shape-3.png' %}" alt="">
+<img class="shape hs-4" src="{% static 'assets/images/hero-shape-4.png' %}" alt="">
+</div>
+
+</header>
+<div class="discover-area pb-76">
+
+<div class="container">
+	<div class="row">
+<div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="title-wrap">
+<div class="row align-items-center">
+<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+<div class="single-title">
+<span><img src="{% static 'assets/images/discover/discover-title-icon.png' %}" alt=""></span>
+<h5>Latest NFTs</h5>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="row work-mixi mt-50 wow animate fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms" id="MixItUpC15DB7">
+<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 mix at">
+<div class="discover-box">
+<div class="discover-img-wrap">
+<img class="w-100" src="{% static 'assets/images/discover/discover-img-1.png' %}" alt="">
+<i class="fas fa-heart"></i>
+</div>
+<div class="discover-content">
+<div class="discover-rank">
+<p style="text-align:center; color: #ffae01; font-size: 12px"><span><i class="bi bi-person-workspace"></i></span> 0x0000000..werty</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br><br>
+<div class="subscribe-area pb-100">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12">
+<div class="subscribe-content text-center">
+<h1>Get you Unique <span>.Core</span> Name</h1>
+<p>Get your .core domain that can be used to represent you in the metaverse</p>
+<form action="" class="subscribe-form mt-50 wow animate flipInX" data-wow-delay="200ms" data-wow-duration="1500ms" method="post">
+	{% csrf_token %}
+<input type="text" onkeyup="return forceLower(this);" name="domain_name" placeholder="Search your perfect .core name">
+<button>.core</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</header>
+
+
+
+
+
+
+
+{% endblock %}

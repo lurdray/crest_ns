@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="login-wrap mt-100">
+<div class="container">
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+<div class="identify-wrap">
+	<p style="text-align:center">You are about to transfer {{ domain_name }}.core</p>
+<div class="row justify-content-center">
+
+
+
+
+<div class="row">
+
+
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 both-small-50" >
+</div>
+
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 both-small-50" >
+	<div class="single-blog-box" style="background: black">
+
+<div class="blog-content">
+
+<div class="blog-social-wrap">
+	<div>
+<p>Name</p>
+<p style="margin-top: -15px; color:#ffae01"> <small></small></p>
+</div>
+<div class="blog-date">
+<span>{{ domain_name }}.core</span>
+</div>
+</div>
+<br><br>
+<div class="blog-social-wrap">
+	<div>
+<p>taken by</p>
+
+</div>
+<div class="blog-date">
+<span>{{ name_address }}</span>
+</div>
+
+</div>
+<div class="menu-search-wrap mb-50">
+<div  class="menu-form">
+
+<input type="text"  name="domain_name" placeholder="wallet address to transfer to">
+</div>
+
+
+</div>
+<hr>
+<div class="author-content">
+<div class="author-name">
+<ul>
+
+<div class="author-follow-btn text-center">
+<a role="button" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >1. Connect to Metamask</a>
+<a role="button" style="border-radius: 5px" class="common-btn design-1 sendEthButton">2. Transfer</a>
+<p style="text-align:center;">Address: <span class="showAccount"></span></p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<br><br>
+
+{% endblock %}
+
+

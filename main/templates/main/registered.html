@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="author-area mt-100">
+<div class="container">
+
+<div class="row mt-50">
+
+    {% for item in domains %}
+<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+<div class="single-author-box">
+<div class="author-img-wrap">
+<div class="author-bg">
+<img class="w-100" src="{% static 'assets/images/author/author-bg-1.png' %}" alt="">
+</div>
+<div class="author-img text-center">
+<img height="100px" width="100px" src="{% static 'assets/images/2.jpg' %}" alt="">
+<div class="author-rank-icon">
+<img src="assets/images/author/creator-rank-icon.png" alt="">
+</div>
+</div>
+</div>
+<div class="author-content">
+<div class="author-name">
+<ul>
+
+<li>{{ item.name }}core </li>
+</ul>
+</div>
+<div class="author-follow-btn text-center">
+<a class="common-btn design-1" href="#">{{  }}</a>
+</div>
+</div>
+ </div>
+</div>
+
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}

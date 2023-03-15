@@ -1,0 +1,127 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="login-wrap mt-100">
+<div class="container">
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+<div class="identify-wrap">
+	<p class="common-btn design-3" style="background:grey;">{{ domain_name }}.core</p>
+<div class="row justify-content-center">
+
+
+
+
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+<form action="" class="contat-input identify-form-input mt-50">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+<div class="sign-up-select-wrap">
+<div class="custom-select filter-options">
+<label>Registration Year</label>
+
+<input id="registration-year-input" oninput="calculateCost()" min="1" style="background:black !important; border: 1px solid black; border-radius: 5px; margin-bottom: -1px;" type="number" name="number" placeholder="1">
+<small style="padding-top:-10px !important">Gas budget 0.001 Core</small>
+</div>
+
+
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+<label>Price Per Year</label>
+<input id="price-per-core-input" oninput="calculateCost()" style="background:black !important; border: 1px solid black; border-radius: 5px" type="text" name="name" value="{{ name_price }}">
+</div>
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12" style=" ">
+<div  style="background-color:black; display:flex; flex-direction: row; justify-content: space-between; align-items:center; height: 60px;  border-radius: 5px">
+<p style="margin-left: 30px; padding-top: 20px"><i class="bi bi-droplet"></i>Core</p>
+<p style="margin-right: 30px; padding-top: 20px"><span id="total-cost">{{ name_price }}</span> Core</p>
+</div>
+<small>c is currently in devnet. Name Registrations can and will be reset</small>
+</div>
+
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12" style="margin-top: 30px;">
+
+<input  style="background:black !important; border: 1px solid black; border-radius: 5px; margin-bottom: -1px;" type="email" name="email" placeholder="discount code">
+</div>
+
+</div>
+
+
+
+</form>
+</div>
+<script>
+function calculateCost() {
+  const registrationYear = document.getElementById("registration-year-input").value;
+  const pricePerCore = document.getElementById("price-per-core-input").value;
+
+  // Calculate total cost and update element with id "total-cost"
+  const totalCost = registrationYear * pricePerCore;
+  document.getElementById("total-cost").textContent = totalCost;
+}
+</script>
+
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 both-small-50" >
+	<div class="single-blog-box" style="background: black">
+
+<div class="blog-content">
+<h3>Order Summary</h3>
+<div class="blog-social-wrap">
+	<div>
+<p>Name</p>
+<p style="margin-top: -15px; color:#ffae01"><small>{{ domain_name }}{{ domain_name|json_script:"domain_name" }}.core</small></p>
+</div>
+<div class="blog-date">
+<span>{{ name_price }} Core</span>
+</div>
+</div>
+<br><br>
+<div class="blog-social-wrap">
+	<div>
+<p>Registration Period</p>
+
+</div>
+<div class="blog-date">
+<span>4 years</span>
+</div>
+</div>
+<hr>
+</div>
+<div class="author-content">
+<div class="author-name">
+<ul>
+
+<div class="author-follow-btn text-center">
+<a role="button" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >Connect to Metamask</a>
+<a role="button" style="border-radius: 5px" class="common-btn design-1 sendEthButton">Buy Domain</a>
+<p style="text-align:center; font-size: 12px;">Address: <span class="showAccount"></span></p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<br><br>
+
+{% endblock %}
+
+
