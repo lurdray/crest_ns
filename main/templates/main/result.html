@@ -30,7 +30,7 @@
 
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-sm-12 col-12">
-	<img class="shape discover-auction-shape" src="{% static 'assets/images/auction/discover-auction-page-shape.png' %}" alt="">
+
 <div class="discover-link text-center">
 <ul>
 <li class="filter theme-color" data-filter="all">Searched Name</li>
@@ -56,10 +56,9 @@
 	{% if available == True %}
 		<h5 class="common-btn design-2" style="color: green; border-color: green; margin-left:10px; font-size: 16px !important;">Available</h5>
 	{% elif available == None %}
-		<h6>Reserved/Special</h6>
+		<h6 class="common-btn design-2">Reserved/Special</h6>
 	{% else %}
-        <span>Not Available</span><br />
-            <p style="text-align:center"><small>Taken by {{ name_address }}</small></p>
+        <h5 class="common-btn design-2" style="color: red; border-color: red; margin-left:10px; font-size: 16px !important;">taken</h5><br />
     {% endif %}
 </div>
 </div>
@@ -70,7 +69,7 @@
 
 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 <div class="title-category-btn-wrap">
-<h5>From 10 core</h5> 
+<h5>From {{ name_price }} core</h5> 
 	<h5>
 		<a {% if available == True %} href="{% url 'main:buy' domain_name %}" {% elif available == None %} href="mailto:hello@aibra.io" {% else %} href="" {% endif %} class="common-btn design-1" style="border-radius: 5px; margin-left:10px; ">Select</a>
 	</h5>
@@ -94,14 +93,14 @@
 <div class="single-title">
 <span></span>
 <div class="title-category-btn-wrap">
-<h5 ><img src="{% static 'assets/images/discover/discover-title-icon.png' %}" alt=""> {{ domain_name }}s.core</h5>
+<h5 ><img src="{% static 'assets/images/discover/discover-title-icon.png' %}" alt=""> {{ domain_name }}.core</h5>
 <br> 
 	{% if available == True %}
 		<h5 class="common-btn design-2" style="color: green; border-color: green; margin-left:10px; font-size: 16px !important;">Available</h5>
 	{% elif available == None %}
-		<h6>Reserved/Special</h6>
+		<h5>Reserved/Special</h5>
 	{% else %}
-		<h6>Not Available</h6>
+		<h5 class="common-btn design-2" style="color: red; border-color: red; margin-left:10px; font-size: 16px !important;">taken</h5>
 	{% endif %}
 </div>
 </div>
@@ -112,7 +111,7 @@
 
 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-sm-12 col-12">
 <div class="title-category-btn-wrap">
-<h5>From 10 core</h5> 
+<h5>From {{ name_price }}</h5> 
 	<h5>
 		<a {% if available == True %} href="{% url 'main:buy' domain_name %}" {% elif available == None %} href="mailto:hello@aibra.io" {% else %} href="" {% endif %} class="common-btn design-1" style="border-radius: 5px; margin-left:10px; ">Select</a>
 	</h5>

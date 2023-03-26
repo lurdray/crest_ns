@@ -1,0 +1,71 @@
+{% extends 'main/base4.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="login-wrap mt-100">
+<div class="container">
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="identify-wrap">
+<div class="row justify-content-center">
+<div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+<div class="identify-form-box-content">
+<div class="identify-form-title text-center">
+<p>Crest Protocol Discount</p>
+<h1>40% Discount</h1>
+<small>You're paying for: "{{ domain_name }}.core"</small>
+</div>
+<form method="post" class="contat-input identify-form-input mt-50">
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+<input style="background:black !important;" type="hidden" name="name" id="name" value="{{ domain_name }}">
+</div>
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+<input name="wallet" id="wallet" style="background:black !important;" type="hidden" placeholder="0x000 (wallet address to receive name)">
+</div>
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+    <input name="discount" id="discount" style="background:black !important;" type="hidden" value="{{ discount }}">
+</div>
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+    <div class="sign-up-select-wrap">
+<div class="custom-select filter-options">
+    <label>Registration Period</label>
+
+    <select name="age" id="age">Age(year)
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+</div>
+
+</div>
+
+<div class="col-xl-12 col-lg-12 col-sm-12 col-12">
+<div class="author-follow-btn text-center">
+    <input name="txn_hash" id="txn_hash" type="hidden" value="none">
+    <input name="token_address" id="token_address" type="hidden" value="0x933E599E3541C9128c0f037f784990D0E213E7E9">
+    <input name="recipient" id="recipient" type="hidden" value="0x69fdB84145B9567Ba31D78c0928840fb1F973d9F">
+<a role="button" id="connectMetamaskButton" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >1. Connect to Metamask</a>
+<a role="button" id="buy_ray" style="border-radius: 5px" class="common-btn design-1 sendEthButton">2. Pay 40% Discount(5 Core)</a>
+<button id="finalize" type="submit" style="display:none;" class="common-btn design-1">3. Finalize</button>
+<p style="text-align:center; font-size: 12px;">Address: <span class="showAccount"></span></p>
+</div>
+</div>
+</div>
+</div>
+</form>
+<div class="sign-up-here-wrap text-center">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

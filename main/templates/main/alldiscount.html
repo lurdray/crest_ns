@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="blog-details-area mt-100 ">
+<div class="container">
+<div class="row">
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 both-small-50">
+<div class="blog-sidebar-wrap">
+
+<div class="sidebar-wrap">
+<div class="single-sidebar">
+<div class="sidebar-title">
+<h3>All Entries for Discount</h3>
+</div>
+<div class="category-list">
+<ul>
+    {% for item in discounts %}
+        <li><a href="#">{{ item.name }}.core | {{ item.age }}Year(s)<span>{{ item.wallet }}</span></a></li>
+    {% endfor %}
+
+</ul>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>
+
+
+{% endblock %}

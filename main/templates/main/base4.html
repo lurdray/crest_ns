@@ -121,6 +121,7 @@
 <ul class="sub-menu">
 <li><a href="{% url 'main:registered' %}">Registered Names</a></li>
 
+
 </ul>
 </li>
 <li class="has-child-menu">
@@ -171,9 +172,7 @@
 <div class="footer-social">
 <ul>
 <li><a href="https://twitter.com/crestprotocol_?s=21&t=1PmJM7PYRu2e096byownIA" target="_blank"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-telegram"></i></a></li>
-<li><a href="#"><i class="fab fa-discord"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a target="_blank" href="https://discord.gg/cyEuvRJF"><i class="fab fa-discord"></i></a></li>
 </ul>
 </div>
 </div>
@@ -187,9 +186,9 @@
 <div class="footer-link">
 <ul>
 
-<li><a href="#">Buy</a></li>
-<li><a href="#">Registered Names</a></li>
-<li><a href="#">Transfer Names</a></li>
+<li><a target="_blank" href="https://shadowswap.xyz/swap?outputCurrency=0xcFE4C0783d103C44f403Bb287d29af0bAE5D4E84">Buy</a></li>
+<li><a href="{% url 'main:registered' %}">Registered Names</a></li>
+
 
 </ul>
 </div>
@@ -202,9 +201,8 @@
 </div>
 <div class="footer-link">
 <ul>
-<li><a href="#">Help Center</a></li>
-<li><a href="#">Suggestions</a></li>
-<li><a href="#">Email For Collab</a></li>
+<li><a target="_blank" href="https://discord.gg/cyEuvRJF">Help Center</a></li>
+<li><a target="_blank" href="https://crestprotocol.co/files/Crest-Protocol-Whitepaper.pdf">Whitepaper</a></li>
 </ul>
 </div>
 </div>
@@ -216,10 +214,9 @@
 </div>
 <div class="footer-link">
 <ul>
-<li><a href="#">Documentation</a></li>
-<li><a href="#">Marketplace</a></li>
-<li><a href="#">Whitepaper</a></li>
-<li><a href="#">Crest Protocol</a></li>
+<li><a href="{% url 'main:docs' %}">Documentation</a></li>
+
+<li><a target="_blank" href="https://crestprotocol.co/">Crest Protocol</a></li>
 </ul>
 </div>
 </div>
@@ -261,7 +258,12 @@
 <script src="{% static 'assets/js/counter-potnt.js' %}"></script>
 
 <script src="{% static 'assets/js/main.js' %}"></script>
-
+<script>
+                    function forceLower(strInput)
+                    {
+                        strInput.value = strInput.value.toLowerCase();
+                    }
+                </script>
 <style>
 
         .btn {
@@ -285,7 +287,7 @@
         
         <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
         <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
-        <script src="{% static 'js/index.js' %}"></script>
+        <script src="{% static 'js/index3.js' %}"></script>
 </body>
 
 

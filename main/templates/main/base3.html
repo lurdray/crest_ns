@@ -121,10 +121,11 @@
 <ul class="sub-menu">
 <li><a href="{% url 'main:registered' %}">Registered Names</a></li>
 
+
 </ul>
 </li>
 <li class="has-child-menu">
-<a href="javascript:void(0)">Documentation</a>
+<a href="{% url 'main:docs' %}">Documentation</a>
 
 
 </li>
@@ -133,7 +134,7 @@
 <form action="" class="menu-form" method="post">
   {% csrf_token %}
 <a type="submit"><i class='bx bx-search'></i></a>
-<input type="text" onkeyup="return forceLower(this);" name="domain_name" placeholder="Search Here">
+<input type="text" onkeyup="return forceLower(this);" name="address" placeholder="Enter Address">
 </form>
 </div>
 </nav>
@@ -143,7 +144,7 @@
 <form action="" class="menu-form" method="post">
   {% csrf_token %}
 <a type="submit"><i class='bx bx-search'></i></a>
-<input type="text" onkeyup="return forceLower(this);" name="domain_name" placeholder="Search Here">
+<input type="text" onkeyup="return forceLower(this);" name="address" placeholder="Enter Address">
 </form>
 
 </div>
@@ -171,9 +172,7 @@
 <div class="footer-social">
 <ul>
 <li><a href="https://twitter.com/crestprotocol_?s=21&t=1PmJM7PYRu2e096byownIA" target="_blank"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-telegram"></i></a></li>
-<li><a href="#"><i class="fab fa-discord"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a target="_blank" href="https://discord.gg/cyEuvRJF"><i class="fab fa-discord"></i></a></li>
 </ul>
 </div>
 </div>
@@ -187,9 +186,9 @@
 <div class="footer-link">
 <ul>
 
-<li><a href="#">Buy</a></li>
-<li><a href="#">Registered Names</a></li>
-<li><a href="#">Transfer Names</a></li>
+<li><a target="_blank" href="https://shadowswap.xyz/swap?outputCurrency=0xcFE4C0783d103C44f403Bb287d29af0bAE5D4E84">Buy</a></li>
+<li><a href="{% url 'main:registered' %}">Registered Names</a></li>
+
 
 </ul>
 </div>
@@ -202,9 +201,8 @@
 </div>
 <div class="footer-link">
 <ul>
-<li><a href="#">Help Center</a></li>
-<li><a href="#">Suggestions</a></li>
-<li><a href="#">Email For Collab</a></li>
+<li><a target="_blank" href="https://discord.gg/cyEuvRJF">Help Center</a></li>
+<li><a target="_blank" href="https://crestprotocol.co/files/Crest-Protocol-Whitepaper.pdf">Whitepaper</a></li>
 </ul>
 </div>
 </div>
@@ -216,10 +214,9 @@
 </div>
 <div class="footer-link">
 <ul>
-<li><a href="#">Documentation</a></li>
-<li><a href="#">Marketplace</a></li>
-<li><a href="#">Whitepaper</a></li>
-<li><a href="#">Crest Protocol</a></li>
+<li><a href="{% url 'main:docs' %}">Documentation</a></li>
+
+<li><a target="_blank" href="https://crestprotocol.co/">Crest Protocol</a></li>
 </ul>
 </div>
 </div>
@@ -237,7 +234,6 @@
 </div>
 </div>
 </div>
-
 
 <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
 
@@ -261,7 +257,12 @@
 <script src="{% static 'assets/js/counter-potnt.js' %}"></script>
 
 <script src="{% static 'assets/js/main.js' %}"></script>
-
+<script>
+                    function forceLower(strInput)
+                    {
+                        strInput.value = strInput.value.toLowerCase();
+                    }
+                </script>
 <style>
 
         .btn {

@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="auction-details-area mt-100">
+<div class="container">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+<div class="auction-details-img-wrap">
+<div class="auction-details-img-coming-soon">
+<div class="countdown-timer style-three">
+<ul data-countdown="2023-02-16">
+<li>{{ domain.name }}</li>
+</ul>
+</div>
+</div>
+<div class="auction-details-img">
+    <p  style="display:flex; align-items:center; justify-content:center; margin-top: 20px;">
+{{ domain.image|safe }}
+</p>
+</div>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 both-small-50">
+<div class="auction-details-content ps-lg-3 ps-0">
+<div class="auction-details-content-list">
+<ul>
+<li><div>Taken By <span>:</span></div> <span>{{ domain.address|truncatechars:15 }}</span></li>
+<li><div>Price <span>:</span></div> <span>{{ domain.price }} Core</span></li>
+<li><div>Years of Ownership <span>:</span></div> <span>{{ domain.age }} Year(s)</span></li>
+<li><div>Expiry Date <span>:</span></div> <span>{{ domain.end_year }}</span></li>
+</ul>
+</div>
+<div class="auction-details-btn-wrap mt-50">
+<a class="common-btn design-5" href="{% url 'main:transfer2' domain.token_id domain.name %}">Transfer Name</a>
+</div>
+</div>
+</div>
+</div>
+
+<hr>
+<div class="row mt-50">
+    My domain names:
+</div>
+<div class="row mt-50">
+
+    {% for item in others %}
+<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+<div class="single-author-box">
+<div class="author-img-wrap w-100" >
+<div  style="display:flex; align-items:center; justify-content:center; margin-top: 20px">
+{{ item.image|safe }}
+</div>
+    
+
+
+</div>
+<div class="author-content">
+<div class="author-name">
+<ul>
+<p style="text-align:center; color: #ffae01; font-size: 10px; overflow:hidden; margin-top: 15px; object-fit:contain"> {{ item.address }}</p>
+</ul>
+</div>
+<div class="author-follow-btn text-center">
+<a class="common-btn design-1" href="{% url 'main:manage' item.name %}">manage</a>
+</div>
+</div>
+ </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+</div>
+
+
+<br>
+
+
+{% endblock %}

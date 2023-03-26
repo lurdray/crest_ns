@@ -1,15 +1,22 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base2.html' %}
 {% load static %}
 {% block content %}
 
 
+
+<style>
+	#submits{
+	  visibility: hidden;
+	}
+  </style>
+  
 <div class="login-wrap mt-100">
 <div class="container">
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
 <div class="identify-wrap">
-	<p style="text-align:center">You are about to transfer {{ domain_name }}.core</p>
+	<p style="text-align:center">You are about to transfer {{ domain_namek }}.core</p>
 <div class="row justify-content-center">
 
 
@@ -32,24 +39,32 @@
 <p style="margin-top: -15px; color:#ffae01"> <small></small></p>
 </div>
 <div class="blog-date">
-<span>{{ domain_name }}.core</span>
+<span>{{ domain_namek }}.core</span>
 </div>
 </div>
 <br><br>
 <div class="blog-social-wrap">
 	<div>
-<p>taken by</p>
+
 
 </div>
-<div class="blog-date">
-<span>{{ name_address }}</span>
-</div>
+
 
 </div>
 <div class="menu-search-wrap mb-50">
-<div  class="menu-form">
+<form method="post" id="submit" name="submit">
+	{% csrf_token %}
 
-<input type="text"  name="domain_name" placeholder="wallet address to transfer to">
+	<div  class="menu-form">
+
+		<input type="text" id="to_w"  name="to_w" placeholder="wallet address to transfer to">
+		</div>
+
+<div  class="menu-form">
+<input type="hidden" style="color: black; text-transform:lowecase" name="address1" placeholder="Enter .brise domain name..." class="form-control" id="address1">
+<input type="hidden" style="color: black; text-transform:lowecase" name="domain_name" placeholder="Enter .brise domain name..." class="form-control" value="{{ domain_name }}" id="domain_name">
+<input type="hidden" style="color: black; text-transform:lowecase" name="domain_namek" placeholder="Enter .brise domain name..." class="form-control" value="{{ domain_namek }}" id="domain_namek">
+
 </div>
 
 
@@ -60,8 +75,10 @@
 <ul>
 
 <div class="author-follow-btn text-center">
-<a role="button" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >1. Connect to Metamask</a>
-<a role="button" style="border-radius: 5px" class="common-btn design-1 sendEthButton">2. Transfer</a>
+<a role="button" id="connect_ray" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >1. Connect to Metamask</a>
+<a role="button" id="transfer_ray" style="border-radius: 5px" class="common-btn design-1 sendEthButton">2. Transfer</a>
+<button type="submit" id="submits" style="border-radius: 5px" class="submit">Submit</button>
+</form>
 <p style="text-align:center;">Address: <span class="showAccount"></span></p>
 </div>
 </div>
@@ -84,6 +101,7 @@
 
 
 <br><br>
+
 
 {% endblock %}
 

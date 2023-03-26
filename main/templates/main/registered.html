@@ -1,36 +1,44 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base3.html' %}
 {% load static %}
 {% block content %}
 
 
 <div class="author-area mt-100">
 <div class="container">
+    
+    
+<div class="subscribe-area pb-100">
+<div class="row justify-content-center">
+<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12">
+<div class="subscribe-content text-center">
+    <form action="" class="subscribe-form mt-50 wow animate flipInX" data-wow-delay="200ms" data-wow-duration="1500ms" method="post">
+	{% csrf_token %}
+<input type="text" onkeyup="return forceLower(this);" name="address" placeholder="Enter your wallet address">
+<button type="submit">Go</button>
+</form>
+</div></div></div></div>
 
 <div class="row mt-50">
 
-    {% for item in domains %}
+    {% for item in result %}
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
 <div class="single-author-box">
-<div class="author-img-wrap">
-<div class="author-bg">
-<img class="w-100" src="{% static 'assets/images/author/author-bg-1.png' %}" alt="">
+<div class="author-img-wrap w-100" >
+<div  style="display:flex; align-items:center; justify-content:center; margin-top: 20px">
+{{ item.image|safe }}
 </div>
-<div class="author-img text-center">
-<img height="100px" width="100px" src="{% static 'assets/images/2.jpg' %}" alt="">
-<div class="author-rank-icon">
-<img src="assets/images/author/creator-rank-icon.png" alt="">
-</div>
-</div>
+    
+
+
 </div>
 <div class="author-content">
 <div class="author-name">
 <ul>
-
-<li>{{ item.name }}core </li>
+<p style="text-align:center; color: #ffae01; font-size: 10px; overflow:hidden; margin-top: 15px; object-fit:contain"> {{ item.address }}</p>
 </ul>
 </div>
 <div class="author-follow-btn text-center">
-<a class="common-btn design-1" href="#">{{  }}</a>
+<a class="common-btn design-1" href="{% url 'main:manage' item.name %}">manage</a>
 </div>
 </div>
  </div>
@@ -41,6 +49,7 @@
 </div>
 </div>
 </div>
+<br><br><br><br>
 
 
 {% endblock %}

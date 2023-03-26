@@ -1,7 +1,12 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base0.html' %}
 {% load static %}
 {% block content %}
 
+<style>
+  #submits{
+    visibility: hidden;
+  }
+</style>
 
 <div class="login-wrap mt-100">
 <div class="container">
@@ -18,14 +23,15 @@
 <div class="row">
 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
 
-<form action="" class="contat-input identify-form-input mt-50">
+<form method="post" class="contat-input identify-form-input mt-50" name="submit" id="submit">
+  {% csrf_token %}
 <div class="row">
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 <div class="sign-up-select-wrap">
 <div class="custom-select filter-options">
 <label>Registration Year</label>
 
-<input id="age" oninput="calculateCost()" min="1" style="background:black !important; border: 1px solid black; border-radius: 5px; margin-bottom: -1px;" type="number" name="number" value="1" required>
+<input id="age" oninput="calculateCost()" min="1" style="background:black !important; border: 1px solid black; border-radius: 5px; margin-bottom: -1px;" type="number" name="age" value="1" required>
 <small style="padding-top:-10px !important">Gas budget 0.001 Core</small>
 </div>
 
@@ -34,8 +40,9 @@
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 <label>Price Per Year</label>
+<input id="wallet_address"  type="hidden" name="wallet_address">
 <input id="domain_name"  type="hidden" name="domain_name" value="{{ domain_name }}">
-<input id="price-per-core-input" oninput="calculateCost()" style="background:black !important; border: 1px solid black; border-radius: 5px" type="text" name="name" value="{{ name_price }}">
+<input id="price-per-core-input" oninput="calculateCost()" style="background:black !important; border: 1px solid black; border-radius: 5px" type="text" name="name" value="{{ name_price }}" disabled>
 </div>
 <div class="col-xl-12 col-lg-12 col-sm-12 col-12" style=" ">
 <div  style="background-color:black; display:flex; flex-direction: row; justify-content: space-between; align-items:center; height: 60px;  border-radius: 5px">
@@ -101,6 +108,7 @@ function calculateCost() {
 <div class="author-follow-btn text-center">
 <a role="button" id="connectMetamaskButton" style="border-radius: 5px" class="common-btn design-3 enableEthereumButton" >Connect to Metamask</a>
 <a role="button" id="buy_ray" style="border-radius: 5px" class="common-btn design-1 sendEthButton">Buy Domain</a>
+<button type="submit" id="submits" style="border-radius: 5px" class="submit">Submit</button>
 <p style="text-align:center; font-size: 12px;">Address: <span class="showAccount"></span></p>
 </div>
 </div>

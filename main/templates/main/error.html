@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="blog-details-area mt-100 ">
+<div class="container">
+<div class="row">
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 both-small-50">
+<div class="blog-sidebar-wrap">
+
+<div class="sidebar-wrap">
+<div class="single-sidebar">
+    <div class="sidebar-title text-center">
+        <h3>{{ msg }}</h3>
+    </div>
+    <div class="author-follow-btn text-center">
+<a class="common-btn design-1" href="{% url 'main:discount' %}">Go back</a>
+</div>
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>
+
+
+{% endblock %}

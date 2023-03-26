@@ -32,7 +32,7 @@ sendEthButton.addEventListener("click", () => {
 	  }
   
 	  async function loadContract() {
-		let abi =  [
+		let abi = [
 	{
 		"inputs": [
 			{
@@ -627,18 +627,29 @@ sendEthButton.addEventListener("click", () => {
 		const account = await getCurrentAccount();
 
 		//let domain_name = {{ domain_name|escapejs }};
-		const age = await document.getElementById("age").value;
-		const domain_name = await document.getElementById("domain_name").value;
-		//const domain_name = JSON.parse(document.getElementById('domain_name').textContent);
-		const raw_amount = await contract.methods.price(domain_name, age).call();
+        
+        const to_w = await document.getElementById("to_w").value;
+        const domain_name = await document.getElementById("domain_name").value;
+		const domain_namek = await document.getElementById("domain_namek").value;
+        
+		//const to_w = JSON.parse(document.getElementById('to_w').textContent);
+		//const domain_name = "JSON.parse(document.getElementById('domain_name').textContent);"
 		
-		const amountk = web3.utils.toWei(raw_amount, 'ether');
+		const raw_amount = await contract.methods.price(domain_namek, 1).call();
+		
+		const amountk = web3.utils.toWei('1', 'ether');
 		const valuek = web3.utils.toHex(amountk);
+
+		console.log(to_w)
+		console.log(domain_name)
+		console.log(domain_namek)
+		console.log(valuek)
+		
   
 		//let result = await window.contract.methods.register(domain_name).send({ from: account, to: "0xA67f0392a9A70dEB2A0cf8Ae36017B20A8d11756", value: web3.utils.toWei(raw_amount, "ether"), gas: "21000000", gasPrice: "20000000000000"  });
-		document.getElementById("buy_ray").textContent="Processing...";
-		let result = await window.contract.methods.register(domain_name, age).send({ from: account, to: "0x69fdB84145B9567Ba31D78c0928840fb1F973d9F", value: valuek, });
-		//window.location.href = "https://crestprotocol.domains/manage/" + domain_name + ".core/";
+		document.getElementById("transfer_ray").textContent="Processing....";
+		let result = await window.contract.methods.transferFrom(account, to_w, domain_name).send({ from: account, });
+		//window.location.href = "https://crestprotocol.domains";
 		document.forms["submit"].submit()
 		console.info("== result: ", result)
 		
@@ -662,6 +673,7 @@ ethereumButton.addEventListener("click", () => {
 async function getAccount() {
   accounts = await ethereum.enable();
   showAccount.innerHTML = accounts[0];
-  document.getElementById("wallet_address").value = accounts[0];
-  document.getElementById("connectMetamaskButton").textContent="Connected";
+  document.getElementById("address1").value = accounts[0];
+  document.getElementById("connect_ray").textContent="Connected";
 }
+        
